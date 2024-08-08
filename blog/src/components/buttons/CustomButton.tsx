@@ -1,21 +1,28 @@
+import { Fab } from "@mui/material";
 import { FC } from "react";
+import { ButtonColorVarient, ButtonVarient } from "../../constants/Enums";
 
 interface ICustomButton{
     label : string
-    onClick ?: ()=>void
+    onClick ?: (e:any)=>void
     className ?: string
-    type:any
+    variant : ButtonVarient
+    color ?: ButtonColorVarient
+    size ?: any
 }
 const CustomButton : FC<ICustomButton> = (props)=>{
-    const { label,onClick,type,className} = props
+    const { label,onClick,variant,className,color,size} = props
 
     return(
-        
-        <button type={type} className={className} onClick={onClick}>
-            {label}
-        </button>
-        
-      
+        <Fab 
+            variant={variant} 
+            size={size || "medium" }
+            color={color || "primary"} 
+            className={className} 
+            onClick={onClick}
+        >
+           {label}
+        </Fab>
     )
 }
 export default CustomButton

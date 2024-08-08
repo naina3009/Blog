@@ -1,10 +1,14 @@
 import React from 'react';
-import CreateBlog from './screens/blog/CreateBlog';
-
+import Navbar from './components/navbar/Navbar';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <CreateBlog/>
+  
+    <>
+    <Navbar />
+    <Outlet/>
+    </>
   );
 }
 

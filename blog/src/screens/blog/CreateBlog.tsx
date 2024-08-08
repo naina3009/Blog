@@ -1,6 +1,8 @@
 import { FC, useState } from "react";
 import InputField from "../../components/input-field/InputField";
 import CustomButton from "../../components/buttons/CustomButton";
+import { ButtonVarient, InputVarient } from "../../constants/Enums";
+import SearchField from "../../components/search-field/SearchField";
 
 
 
@@ -37,25 +39,43 @@ console.log(inputs)
             <InputField 
                 name={"heading"}
                 value={inputs.heading}
-                onChange={handleChange} 
-                type={"text"}
+                onChange={handleChange}
+                type={"text"} 
+                label={""} 
+                varient={InputVarient.Outlined}
             />
              <InputField 
                 name={"description"}
                 value={inputs.description}
-                onChange={handleChange} 
-                type={"text"}
+                onChange={handleChange}
+                type={"text"} 
+                label={""} 
+                varient={InputVarient.Outlined}
             />
              <InputField 
                 name={"image"}
-                value={inputs.image  ? inputs.image.name : ""}
-                onChange={handleChange} 
-                type={'file'}
+                value={inputs.image ? inputs.image.name : ""}
+                onChange={handleChange}
+                type={'file'} 
+                label={""} 
+                varient={InputVarient.Outlined}
             />
+            <SearchField 
+            name={"naina"} 
+            value={inputs.description} 
+            onChange={handleChange} 
+            label={"Naina"} 
+            varient={InputVarient.Outlined}
+            onClick={()=>alert("data")}
+            />
+            
             <CustomButton 
                 label={"Create"} 
-                // onClick={()=>console.log()} 
-                    type={"submit"}
+                onClick={function (): void {
+                    throw new Error("Function not implemented.");
+                } } 
+                variant={ButtonVarient.Extended}                // onClick={()=>console.log()} 
+                    // type={"submit"}
             />
 
         </form>
